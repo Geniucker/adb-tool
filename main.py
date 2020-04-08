@@ -3,6 +3,7 @@ import dependence as d
 
 d.chdir("adb")
 d.system("cls")
+print("版本：v0.0.1")
 d.cprint("连接操作会停止其他adb的进程，若正在进行其他adb操作请完成后再使用本工具",d.FOREGROUND_RED|d.FOREGROUND_INTENSITY)
 while d.con_ctrl:
     _method = input(d.METHOD)
