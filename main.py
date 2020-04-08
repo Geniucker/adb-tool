@@ -24,3 +24,4 @@ while d.run:
     except:
         d.system("cls")
         d.cprint("请输入正确的数字",d.FOREGROUND_GREEN|d.FOREGROUND_INTENSITY)
+d.getoutput("taskkill /im adb.exe /f")
