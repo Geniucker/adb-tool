@@ -1,5 +1,5 @@
 # adb tool
-这是一个基于Python开发的adb工具箱（本人Python新手，没有写GUI），可以为懒得打adb命令或不会使用adb命令的人提供便利
+这是一个基于Python开发的adb工具箱（本人Python新手，没有写GUI，逻辑可能写的很捞，有BUG建议之类的欢迎写Issues），可以为懒得打adb命令或不会使用adb命令的人提供便利
 
 # 当前支持的连接方式
 1. USB连接
