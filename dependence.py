@@ -295,7 +295,7 @@ def Brevent():
             system("cls")
             return
         else:
-            print("已经以root模式激活")
+            print("已激活")
             print("即将返回菜单",end='')
             for _i in range(1,4):
                 print(".",end='',flush=True)
