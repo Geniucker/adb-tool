@@ -23,9 +23,10 @@ MENU = """
     2、自定义动画缩放速度（Bluestacks模拟器没有这个设置，会直接返回菜单）
     3、激活冰箱Ice Box（两种模式）
     4、激活小黑屋Stopapp（两种模式）
-    5、退出
+    5、激活黑阈
+    6、退出
 """
-mENU=("Size()","Velocity()","Active_Icebox()","Active_Stopapp()","run=False")
+mENU=("Size()","Velocity()","Active_Icebox()","Active_Stopapp()","Brevent()","run=False")
 
 
 
@@ -263,6 +264,39 @@ def Active_Stopapp():
                 return
         else:
             print("已存在设备管理员，激活失败，即将返回菜单",end='')
+            for _i in range(1,4):
+                print(".",end='',flush=True)
+                sleep(1)
+            system("cls")
+            return
+    else:
+        print("激活成功，即将返回菜单",end='')
+        for _i in range(1,4):
+            print(".",end='',flush=True)
+            sleep(1)
+        system("cls")
+        return
+def Brevent():
+    system("cls")
+    cprint("P.S.请确保已完整阅读过官方文档\n若由于使用本工具而未仔细阅读官方文档相关内容造成不良后果作者将不承担任何责任",FOREGROUND_RED|FOREGROUND_INTENSITY)
+    if "yes"!=input("确保已了解相关事项输入yes确认继续，确认即视为同意P.S.中内容，输入其余任意内容返回菜单"):
+        system("cls")
+        return
+    back = getoutput("adb -s "+id+" shell sh /data/data/me.piebridge.brevent/brevent.sh")
+    try:re.search("success",back,re.IGNORECASE).group()
+    except AttributeError:
+        try:re.search("root",back,re.IGNORECASE).group()
+        except:
+            print("我怀疑你还没安装黑阈")
+            print("即将返回菜单",end='')
+            for _i in range(1,4):
+                print(".",end='',flush=True)
+                sleep(1)
+            system("cls")
+            return
+        else:
+            print("已激活")
+            print("即将返回菜单",end='')
             for _i in range(1,4):
                 print(".",end='',flush=True)
                 sleep(1)
